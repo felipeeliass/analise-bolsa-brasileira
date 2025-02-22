@@ -51,7 +51,7 @@ A **análise fundamentalista** avalia a saúde financeira de uma empresa com bas
 ## 7. P/L (Preço/Lucro)
 O **P/L** é um dos indicadores mais utilizados na análise fundamentalista. Ele compara o preço da ação com o lucro por ação (LPA). A fórmula é:
 
-![Fórmula do P/L](imagens/fórmula pl.png)
+![Fórmula do P/L](imagens/fórmula_pl.png)
 
 Um P/L baixo pode indicar que a ação está subvalorizada, enquanto um P/L alto pode sugerir que a ação está supervalorizada.
 
@@ -60,7 +60,7 @@ Um P/L baixo pode indicar que a ação está subvalorizada, enquanto um P/L alto
 ## 8. ROE (Return on Equity)
 O **ROE** é um indicador financeiro que mede a rentabilidade de uma empresa em relação ao patrimônio líquido. Ele é calculado como:
 
-![Fórmula do ROE](imagens/fórmula ROE.png)
+![Fórmula do ROE](imagens/fórmula_ROE.png)
 Um ROE alto indica que a empresa está gerando bons retornos para os acionistas.
 
 ---
