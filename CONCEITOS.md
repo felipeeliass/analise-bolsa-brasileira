@@ -60,10 +60,7 @@ Um P/L baixo pode indicar que a ação está subvalorizada, enquanto um P/L alto
 ## 8. ROE (Return on Equity)
 O **ROE** é um indicador financeiro que mede a rentabilidade de uma empresa em relação ao patrimônio líquido. Ele é calculado como:
 
-\[
-ROE = \frac{\text{Lucro Líquido}}{\text{Patrimônio Líquido}} \times 100
-\]
-
+![Fórmula do ROE](imagens/fórmula ROE.png)
 Um ROE alto indica que a empresa está gerando bons retornos para os acionistas.
 
 ---
