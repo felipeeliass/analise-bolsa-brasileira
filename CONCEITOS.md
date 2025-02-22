@@ -51,9 +51,7 @@ A **análise fundamentalista** avalia a saúde financeira de uma empresa com bas
 ## 7. P/L (Preço/Lucro)
 O **P/L** é um dos indicadores mais utilizados na análise fundamentalista. Ele compara o preço da ação com o lucro por ação (LPA). A fórmula é:
 
-\[
-P/L = \frac{\text{Preço da Ação}}{\text{Lucro por Ação (LPA)}}
-\]
+![Fórmula do P/L](imagens/fórmula pl.png)
 
 Um P/L baixo pode indicar que a ação está subvalorizada, enquanto um P/L alto pode sugerir que a ação está supervalorizada.
 
