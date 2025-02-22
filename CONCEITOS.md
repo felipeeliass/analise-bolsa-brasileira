@@ -68,9 +68,7 @@ Um ROE alto indica que a empresa está gerando bons retornos para os acionistas.
 ## 9. Dividend Yield
 O **Dividend Yield** é um indicador que mostra o retorno em dividendos em relação ao preço da ação. Ele é calculado como:
 
-\[
-\text{Dividend Yield} = \frac{\text{Dividendos por Ação}}{\text{Preço da Ação}} \times 100
-\]
+![Fórmula do Dividend Yield](imagens/formulady.jpg)
 
 Um Dividend Yield alto pode ser atraente para investidores que buscam renda passiva.
 
