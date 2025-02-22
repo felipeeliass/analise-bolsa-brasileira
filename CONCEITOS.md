@@ -51,7 +51,7 @@ A **análise fundamentalista** avalia a saúde financeira de uma empresa com bas
 ## 7. P/L (Preço/Lucro)
 O **P/L** é um dos indicadores mais utilizados na análise fundamentalista. Ele compara o preço da ação com o lucro por ação (LPA). A fórmula é:
 
-![Fórmula do P/L](imagens/fórmula_pl.png)
+P/L = (Preço da Ação) / (Lucro por Ação - LPA)
 
 Um P/L baixo pode indicar que a ação está subvalorizada, enquanto um P/L alto pode sugerir que a ação está supervalorizada.
 
@@ -60,7 +60,8 @@ Um P/L baixo pode indicar que a ação está subvalorizada, enquanto um P/L alto
 ## 8. ROE (Return on Equity)
 O **ROE** é um indicador financeiro que mede a rentabilidade de uma empresa em relação ao patrimônio líquido. Ele é calculado como:
 
-![Fórmula do ROE](imagens/fórmula_ROE.png)
+ROE = (Lucro Líquido) / (Patrimônio Líquido) * 100
+
 Um ROE alto indica que a empresa está gerando bons retornos para os acionistas.
 
 ---
@@ -68,7 +69,7 @@ Um ROE alto indica que a empresa está gerando bons retornos para os acionistas.
 ## 9. Dividend Yield
 O **Dividend Yield** é um indicador que mostra o retorno em dividendos em relação ao preço da ação. Ele é calculado como:
 
-![Fórmula do Dividend Yield](imagens/formulady.jpg)
+Dividend Yield = (Dividendos por Ação) / (Preço da Ação) * 100
 
 Um Dividend Yield alto pode ser atraente para investidores que buscam renda passiva.
 
@@ -82,9 +83,7 @@ O **EBITDA** (Earnings Before Interest, Taxes, Depreciation, and Amortization) �
 ## 11. Dívida Líquida/EBITDA
 Este indicador mede a capacidade da empresa de pagar suas dívidas com o lucro operacional (EBITDA). A fórmula é:
 
-\[
-\text{Dívida Líquida/EBITDA} = \frac{\text{Dívida Líquida}}{\text{EBITDA}}
-\]
+Dívida Líquida/EBITDA = (Dívida Líquida) / (EBITDA)
 
 Um valor baixo indica que a empresa tem uma boa capacidade de pagamento.
 
