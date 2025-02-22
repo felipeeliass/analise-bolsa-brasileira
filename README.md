@@ -28,5 +28,3 @@ O projeto foi criado para explorar e analisar o comportamento de ações e setor
 - **Jupyter Notebook**: Para documentação interativa.
 
 ---
-
-## Estrutura do Repositório
