@@ -36,10 +36,10 @@ Você pode executar o código diretamente no Google Colab sem precisar configura
 ### Passo 1: Abrir o Notebook no Colab
 Clique no botão abaixo para abrir o notebook no Google Colab:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/seu-usuario/PETR4/blob/main/notebooks/analise.ipynb)
+https://colab.research.google.com/#create=true 
 
-### Passo 2: Fazer uma Cópia
-No Google Colab, vá em **Arquivo > Salvar uma cópia no Drive** para criar sua própria versão editável do notebook.
+### Passo 2: Copiar e Colar o Código
+Copie o código do repositório e cole no notebook do Colab.
 
 ### Passo 3: Executar o Código
 Clique em **Runtime > Run all** para executar todas as células do notebook.
