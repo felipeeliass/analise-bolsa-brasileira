@@ -28,3 +28,22 @@ O projeto foi criado para explorar e analisar o comportamento de ações e setor
 - **Jupyter Notebook**: Para documentação interativa.
 
 ---
+
+## Como Executar o Código
+
+Você pode executar o código diretamente no Google Colab sem precisar configurar nada no seu computador.
+
+### Passo 1: Abrir o Notebook no Colab
+Clique no botão abaixo para abrir o notebook no Google Colab:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/seu-usuario/PETR4/blob/main/notebooks/analise.ipynb)
+
+### Passo 2: Fazer uma Cópia
+No Google Colab, vá em **Arquivo > Salvar uma cópia no Drive** para criar sua própria versão editável do notebook.
+
+### Passo 3: Executar o Código
+Clique em **Runtime > Run all** para executar todas as células do notebook.
+
+### Passo 4: Visualizar os Resultados
+Os gráficos serão exibidos diretamente no notebook.
+---
