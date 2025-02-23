@@ -1,0 +1,133 @@
+import yfinance as yf
+import pandas as pd
+import matplotlib.pyplot as plt
+
+ticker = "PETR4.SA"
+dados = yf.download(ticker, start = "2020-01-01", end = "2025-02-14")
+display(dados.head())
+
+#gráfico fechamento#
+plt.figure(figsize=(13, 11))
+dados['Close'].plot(title='Fechamento PETR4.SA', label='Preço de Fechamento', color='green')
+plt.xlabel('Data')
+plt.ylabel('Preço (R$)')
+plt.show()
+
+#médias móveis#
+dados['MM21'] = dados['Close'].rolling(window=21, min_periods=1).mean()
+dados['MM63'] = dados['Close'].rolling(window=63, min_periods=1).mean()
+dados['MM252'] = dados['Close'].rolling(window=252, min_periods=1).mean()
+display(dados[['Close', 'MM21', 'MM63', 'MM252']].head())
+plt.figure(figsize=(13, 6))
+plt.plot(dados['Close'], label='Preço de Fechamento', color='blue')
+plt.plot(dados['MM21'], label='Média Móvel 21 Dias', color='orange')
+plt.plot(dados['MM63'], label='Média Móvel 63 Dias', color='green')
+plt.plot(dados['MM252'], label='Média Móvel 252 Dias', color='red')
+plt.title('Médias Móveis da PETR4')
+plt.xlabel('Data')
+plt.ylabel('Preço (R$)')
+plt.legend()
+plt.grid()
+plt.show()
+
+# Dados do Brent e do Dólar#
+dados_brent = yf.download("BZ=F", start="2020-01-01", end="2025-02-14")['Close']
+dados_dolar = yf.download("USDBRL=X", start="2020-01-01", end="2025-02-14")['Close']
+print(dados_brent)
+print(dados_dolar)
+# Baixar dados da PETR4, Brent e Dólar#
+dados_petr4 = yf.download("PETR4.SA", start="2020-01-01", end="2025-02-14")['Close']
+dados_brent = yf.download("BZ=F", start="2020-01-01", end="2025-02-14")['Close']
+dados_dolar = yf.download("USDBRL=X", start="2020-01-01", end="2025-02-14")['Close']
+
+# Juntar os Dados#
+dados_correlacao = pd.concat([dados_petr4, dados_brent, dados_dolar], axis=1, keys=['PETR4', 'Brent', 'Dólar'])
+dados_correlacao = dados_correlacao.dropna()
+print("Dados Combinados:")
+print(dados_correlacao.head())
+
+# Calcular a matriz de correlação#
+correlacao = dados_correlacao.corr()
+
+# Exibir#
+print("Matriz de Correlação:")
+print(correlacao)
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.set(style="white")
+plt.figure(figsize=(8, 6))
+sns.heatmap(correlacao, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
+plt.title('Correlação entre PETR4, Brent e Dólar')
+plt.show()
+
+
+sns.set(style="darkgrid")
+# Gráfico de Dispersão#
+sns.pairplot(dados_correlacao, kind='scatter', diag_kind='kde')
+plt.suptitle('Relação entre PETR4, Brent e Dólar', y=1.02)
+plt.show()
+
+dados_normalizados = dados_correlacao / dados_correlacao.iloc[0]*100
+
+#Gráfico de Linha#
+plt.figure(figsize=(12, 6))
+for coluna in dados_normalizados.columns:
+    plt.plot(dados_normalizados.index, dados_normalizados[coluna], label=coluna)
+
+plt.title('Evolução dos Preços Normalizados (PETR4, Brent, Dólar)')
+plt.xlabel('Data')
+plt.ylabel('Preço Normalizado')
+plt.legend()
+plt.grid()
+plt.show()
+
+#Análise em Meio a Eventos Relevantes
+eventos = {
+    "Início da Guerra na Ucrânia": "2022-02-24",
+    "Queda do Petróleo (COVID-19)": "2020-03-01",
+    "Eleições EUA 2020": "2020-11-03",
+    "Eleições Brasil 2022": "2022-10-30",
+    "Corte de Produção OPEP+": "2020-04-12"}
+
+
+plt.figure(figsize=(12, 6))
+plt.plot(dados_correlacao['PETR4'], label='PETR4', color='blue')
+plt.plot(dados_correlacao['Brent'], label='Brent', color='orange')
+
+# Adicionar Marcadores
+for evento, data in eventos.items():
+    plt.axvline(pd.to_datetime(data), color='red', linestyle='--', alpha=0.5, label=evento)
+
+plt.title('Preços da PETR4 e Brent com Eventos Marcados')
+plt.xlabel('Data')
+plt.ylabel('Preço')
+plt.legend()
+plt.grid()
+plt.show()
+
+dados_petr4 = yf.download("PETR4.SA", start="2020-01-01", end="2025-02-14")
+dados_petr4['Retornos'] = dados_petr4['Close'].pct_change()
+dados_petr4['Volatilidade'] = dados_petr4['Retornos'].rolling(window=21).std()
+
+eventos = ['2020-03-15', '2020-11-03']  # Datas de eventos
+for evento in eventos:
+    evento_date = pd.to_datetime(evento)
+    janela = dados_petr4.loc[evento_date - pd.Timedelta(days=5):evento_date + pd.Timedelta(days=5)]
+    print(f"Volatilidade ao redor de {evento}: {janela['Volatilidade'].mean()}")
+
+#Volatilidade#
+    plt.figure(figsize=(12, 6))
+plt.plot(dados_petr4['Volatilidade'], label='Volatilidade (21 dias)', color='purple')
+plt.title('Volatilidade da PETR4')
+plt.xlabel('Data')
+plt.ylabel('Volatilidade')
+plt.legend()
+plt.grid()
+plt.show()
+
+#Relação Entre Retornos: PETR4, Brent e Dólar#
+dados_retornos = dados_correlacao.pct_change().dropna()
+sns.pairplot(dados_retornos, kind='scatter', diag_kind='kde')
+plt.suptitle('Relação entre Retornos de PETR4, Brent e Dólar', y=1.02)
+plt.show()
